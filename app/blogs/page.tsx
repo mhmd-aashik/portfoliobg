@@ -1,20 +1,15 @@
 import BlogsItem from "@/components/shared/blogs/BlogsItem";
 import { fetchBlogs } from "@/lib/backend";
+import React from "react";
 
-const Blogs = ({ blogs }: any) => (
-  <div className="bg-[#020000]">
-    <BlogsItem blogs={blogs} />
-  </div>
-);
+const Blogs = async () => {
+  const blogs: any = await fetchBlogs();
 
-export async function getServerSideProps() {
-  const blogs = await fetchBlogs();
-
-  return {
-    props: {
-      blogs,
-    },
-  };
-}
+  return (
+    <div className="bg-[#020000]">
+      <BlogsItem blogs={blogs} />
+    </div>
+  );
+};
 
 export default Blogs;
