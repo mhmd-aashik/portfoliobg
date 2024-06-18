@@ -6,7 +6,7 @@ import Link from "next/link";
 const BlogsItem = ({ blogs }: any) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const searchData = blogs?.data?.data;
+  // const searchData = blogs?.data?.data;
 
   const categories = [
     "All",
@@ -21,8 +21,8 @@ const BlogsItem = ({ blogs }: any) => {
 
   const filteredArticles =
     selectedCategory === "All"
-      ? searchData
-      : searchData.filter(
+      ? blogs
+      : blogs.filter(
           (article: any) => article.attributes.Types === selectedCategory
         );
 
@@ -40,7 +40,7 @@ const BlogsItem = ({ blogs }: any) => {
         ))}
       </div>
       <div className="grid flex-1 gap-x-4  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {filteredArticles?.length > 0 ? (
+        {blogs && filteredArticles.length > 0 ? (
           filteredArticles?.map((item: any) => (
             <BlogCards key={item.id} item={item} />
           ))

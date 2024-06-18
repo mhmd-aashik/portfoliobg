@@ -1,13 +1,16 @@
 import BlogsItem from "@/components/shared/blogs/BlogsItem";
-import { fetchBlogs } from "@/lib/backend";
+// import { fetchBlogs } from "@/lib/backend";
 import React from "react";
+import axios from "axios";
+import { fetchBlogs } from "@/lib/backend";
 
 const Blogs = async () => {
-  const blogs: any = await fetchBlogs();
+  const blogData = await fetchBlogs();
+  console.log(blogData);
 
   return (
     <div className="bg-[#020000]">
-      <BlogsItem blogs={blogs} />
+      <BlogsItem blogs={blogData && blogData} />
     </div>
   );
 };

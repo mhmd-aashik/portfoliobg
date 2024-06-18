@@ -1,11 +1,12 @@
+import axios from "axios";
+
 export async function fetchBlogs() {
   try {
-    const res = await fetch(`${process.env.BACKEND}/blogs?populate=*`);
-    const data = await res.json();
-    return { data };
+    const blogs = await axios.get(`${process.env.BACKEND}/blogs?populate=*`);
+    const blogData = blogs?.data?.data;
+    return blogData;
   } catch (error) {
     console.error(error);
-    return { error: "Fetch failed" };
   }
 }
 
