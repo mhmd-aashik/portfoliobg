@@ -3,7 +3,7 @@ import { fetchBlogs } from "@/lib/backend";
 import React from "react";
 
 const Blogs = async () => {
-  const blogs = await fetchBlogs();
+  const blogs: any = await fetchBlogs();
 
   return (
     <div className="bg-[#020000]">
