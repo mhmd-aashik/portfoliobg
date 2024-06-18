@@ -5,6 +5,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const BlogsItem = ({ blogs }: any) => {
+  console.log(blogs, "blogs");
+
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = [
@@ -24,7 +26,6 @@ const BlogsItem = ({ blogs }: any) => {
       : blogs.filter(
           (article: any) => article.attributes.Types === selectedCategory
         );
-
 
   return (
     <div className="mx-auto max-w-7xl overflow-scroll px-5 md:px-10">
