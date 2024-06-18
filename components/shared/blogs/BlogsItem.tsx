@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import BlogCards from "../BlogCards";
-import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const BlogsItem = ({ blogs }: any) => {
