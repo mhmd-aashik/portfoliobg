@@ -1,4 +1,3 @@
-import fetch from "isomorphic-unfetch"; // Ensure fetch is available both client-side and server-side
 
 export async function fetchBlogs() {
   const options = {
