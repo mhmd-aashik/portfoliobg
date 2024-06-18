@@ -1,4 +1,4 @@
-// import BlogsItem from "@/components/shared/blogs/BlogsItem";
+import BlogsItem from "@/components/shared/blogs/BlogsItem";
 import { fetchBlogs } from "@/lib/backend";
 import React from "react";
 
@@ -7,7 +7,7 @@ const Blogs = async () => {
 
   return (
     <div className="bg-[#020000]">
-      {/* <BlogsItem blogs={blogs} /> */}
+      <BlogsItem blogs={blogs} />
     </div>
   );
 };
