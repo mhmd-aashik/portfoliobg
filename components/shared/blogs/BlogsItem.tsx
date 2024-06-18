@@ -6,7 +6,7 @@ import Link from "next/link";
 const BlogsItem = ({ blogs }: any) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const searchData = blogs?.data?.data || [];
+  const searchData = blogs?.data?.data;
 
   const categories = [
     "All",
@@ -41,7 +41,7 @@ const BlogsItem = ({ blogs }: any) => {
       </div>
       <div className="grid flex-1 gap-x-4  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredArticles.length > 0 ? (
-          filteredArticles.map((item: any) => (
+          filteredArticles?.map((item: any) => (
             <BlogCards key={item.id} item={item} />
           ))
         ) : (
@@ -50,7 +50,10 @@ const BlogsItem = ({ blogs }: any) => {
             <p className="text-center text-white">
               Please select another category
             </p>
-            <Link href="/" className="mt-2 rounded-full bg-blue-500 p-1 px-2 text-center text-white">
+            <Link
+              href="/"
+              className="mt-2 rounded-full bg-blue-500 p-1 px-2 text-center text-white"
+            >
               Back Home
             </Link>
           </div>
