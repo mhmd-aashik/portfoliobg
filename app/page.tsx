@@ -13,7 +13,7 @@ export default async function Home() {
         <div className="absolute left-40 top-[520px] hidden h-60 w-[800px] rotate-45 bg-[#D243FA] opacity-35 blur-3xl sm:flex" />
         <div className="absolute left-0 top-[420px] hidden size-80 rounded-l-full bg-[#3969D0] opacity-45 blur-3xl md:flex" />
         <Hero />
-        <Review />
+        {/* <Review /> */}
         <Blog />
         <TrendBlog />
         <Service />
