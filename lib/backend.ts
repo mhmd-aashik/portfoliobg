@@ -1,4 +1,4 @@
-"use server";
+import fetch from "isomorphic-unfetch"; // Ensure fetch is available both client-side and server-side
 
 export async function fetchBlogs() {
   const options = {
@@ -13,11 +13,12 @@ export async function fetchBlogs() {
     const data = await res.json();
     return { data };
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return { error: "Fetch failed" };
   }
 }
 
-export async function fetchBlogsById({ id }: any) {
+export async function fetchBlogsById({ id }: { id: string }) {
   const options = {
     method: "GET",
     headers: {
@@ -33,11 +34,12 @@ export async function fetchBlogsById({ id }: any) {
     const data = await res.json();
     return { data };
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return { error: "Fetch failed" };
   }
 }
 
-export async function TrendingBlogs(params: any) {
+export async function TrendingBlogs(params: string) {
   const options = {
     method: "GET",
     headers: {
@@ -50,6 +52,7 @@ export async function TrendingBlogs(params: any) {
     const data = await res.json();
     return { data };
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return { error: "Fetch failed" };
   }
 }
