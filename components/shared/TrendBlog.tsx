@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { fetchBlogs, TrendingBlogs } from "@/lib/backend";
+import { TrendingBlogs } from "@/lib/backend";
 import Link from "next/link";
 import BlogCards from "./BlogCards";
 
@@ -53,8 +53,6 @@ const TrendBlog = async () => {
   return (
     <>
       <div className="relative z-20 mx-auto max-w-7xl px-5 pt-20 md:px-10">
-        {/* <div className="absolute -left-20 bottom-10 z-50 hidden size-[800px] rounded-b-full bg-[#3969D0] opacity-35 blur-3xl md:flex" />
-        <div className="absolute bottom-10 right-10 z-50 hidden size-[800px] rounded-b-full bg-[#D243FA] opacity-35 blur-3xl md:flex" /> */}
         <div>
           <h2 className="text-[30px] font-medium text-white sm:text-[48px]">
             Unlock Investment Opportunities
