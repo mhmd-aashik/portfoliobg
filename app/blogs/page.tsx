@@ -1,7 +1,6 @@
 import BlogsItem from "@/components/shared/blogs/BlogsItem";
 // import { fetchBlogs } from "@/lib/backend";
 import React from "react";
-import axios from "axios";
 import { fetchBlogs } from "@/lib/backend";
 
 const Blogs = async () => {

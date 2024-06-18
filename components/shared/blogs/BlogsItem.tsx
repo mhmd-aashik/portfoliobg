@@ -1,12 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import BlogCards from "../BlogCards";
+import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const BlogsItem = ({ blogs }: any) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  // const searchData = blogs?.data?.data;
 
   const categories = [
     "All",
@@ -25,6 +24,7 @@ const BlogsItem = ({ blogs }: any) => {
       : blogs.filter(
           (article: any) => article.attributes.Types === selectedCategory
         );
+
 
   return (
     <div className="mx-auto max-w-7xl overflow-scroll px-5 md:px-10">
