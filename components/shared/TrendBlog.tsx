@@ -3,6 +3,7 @@ import { TrendingBlogs } from "@/lib/backend";
 import Link from "next/link";
 import BlogCards from "./BlogCards";
 
+
 const TrendBlog = async () => {
   const result = await TrendingBlogs(`blogs?pagination[limit]=4&populate=*`);
 

@@ -4,9 +4,8 @@ import BlogBanner from "./BlogBanner";
 
 const Blog = async () => {
   const serviceData = await fetchBlogs();
-  const items = serviceData?.data.data;
 
-  const { id, attributes } = items[5];
+  const { id, attributes } = serviceData[5];
   const { Title, Description } = attributes;
   const imageData = attributes.Image.data.attributes.formats;
   const imageUrl = imageData?.small?.url;

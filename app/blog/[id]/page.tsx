@@ -3,8 +3,10 @@ import { fetchBlogsById } from "@/lib/backend";
 import Image from "next/image";
 import React from "react";
 
+export const revalidate = 0;
+
 const SingleBlog = async ({ params }: any) => {
-  const results:any = await fetchBlogsById({ id: params.id });
+  const results: any = await fetchBlogsById({ id: params.id });
   const { attributes } = results.data.data;
 
   const { Title, Description } = attributes;

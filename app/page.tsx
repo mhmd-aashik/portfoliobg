@@ -5,6 +5,8 @@ import Review from "@/components/shared/Review";
 import Service from "@/components/shared/Service";
 import TrendBlog from "@/components/shared/TrendBlog";
 
+export const revalidate = 0;
+
 export default async function Home() {
   return (
     <>
@@ -14,9 +16,9 @@ export default async function Home() {
         <div className="absolute left-0 top-[420px] hidden size-80 rounded-l-full bg-[#3969D0] opacity-45 blur-3xl md:flex" />
         <Hero />
         <Review />
-        {/* <Blog />
+        <Blog />
         <TrendBlog />
-        <Service /> */}
+        <Service />
         <ContactUs />
       </div>
     </>
