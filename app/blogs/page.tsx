@@ -8,7 +8,7 @@ const Blogs = async () => {
   console.log(blogData);
 
   return (
-    <div className="bg-[#020000]">
+    <div className=" bg-[#020000]">
       <BlogsItem blogs={blogData && blogData} />
     </div>
   );

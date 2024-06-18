@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import BlogCards from "../BlogCards";
-import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+export const revalidate = 0;
 const BlogsItem = ({ blogs }: any) => {
   console.log(blogs, "blogs");
 
@@ -28,7 +28,7 @@ const BlogsItem = ({ blogs }: any) => {
         );
 
   return (
-    <div className="mx-auto max-w-7xl overflow-scroll px-5 md:px-10">
+    <div className="mx-auto max-w-7xl px-5 md:px-10">
       <div className="flex flex-wrap justify-center gap-4 space-x-4 py-4">
         {categories.map((category) => (
           <button
@@ -40,7 +40,7 @@ const BlogsItem = ({ blogs }: any) => {
           </button>
         ))}
       </div>
-      <div className="grid flex-1 gap-x-4  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid flex-1 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {blogs && filteredArticles.length > 0 ? (
           filteredArticles?.map((item: any) => (
             <BlogCards key={item.id} item={item} />
