@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const SingleBlog = async ({ params }: any) => {
-  const results: any = await fetchBlogsById({ id: params.id });
+  const results:any = await fetchBlogsById({ id: params.id });
   const { attributes } = results.data.data;
 
   const { Title, Description } = attributes;

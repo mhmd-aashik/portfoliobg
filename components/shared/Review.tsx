@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ReviewCard from "./ReviewCard";
 import Marquee from "react-fast-marquee";

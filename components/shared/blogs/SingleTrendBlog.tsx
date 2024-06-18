@@ -14,7 +14,7 @@ const SingleTrendBlog = async () => {
         <div className="absolute bottom-10 right-10 hidden size-[800px] rounded-b-full bg-[#D243FA] opacity-15 blur-3xl md:flex" />
         <div>
           <h2 className="text-[30px] font-medium text-white sm:text-[38px]">
-            Trending topics this week{" "}
+            Trending topics this week
           </h2>
         </div>
         <div className="mt-10 grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
