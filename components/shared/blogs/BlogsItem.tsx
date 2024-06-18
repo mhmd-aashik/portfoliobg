@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import BlogCards from "../BlogCards";
 import Link from "next/link";
