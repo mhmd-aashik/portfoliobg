@@ -1,33 +1,55 @@
-import axios from "axios";
+"use server";
 
 export async function fetchBlogs() {
-  try {
-    const blogs = await axios.get(`${process.env.BACKEND}/blogs?populate=*`);
-    const blogData = blogs?.data?.data;
-    return blogData;
-  } catch (error) {
-    console.error(error);
-  }
-}
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.BACKEND_TOKEN}`,
+    },
+  };
 
-export async function fetchBlogsById({ id }: { id: string }) {
   try {
-    const res = await fetch(`${process.env.BACKEND}/blogs/${id}?populate=*`);
+    const res = await fetch(`${process.env.BACKEND}/blogs?populate=*`, options);
     const data = await res.json();
     return { data };
   } catch (error) {
-    console.error(error);
-    return { error: "Fetch failed" };
+    console.log(error);
   }
 }
 
-export async function TrendingBlogs(params: string) {
+export async function fetchBlogsById({ id }: any) {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.BACKEND_TOKEN}`,
+    },
+  };
+
   try {
-    const res = await fetch(`${process.env.BACKEND}/${params}`);
+    const res = await fetch(
+      `${process.env.BACKEND}/blogs/${id}?populate=*`,
+      options
+    );
     const data = await res.json();
     return { data };
   } catch (error) {
-    console.error(error);
-    return { error: "Fetch failed" };
+    console.log(error);
+  }
+}
+
+export async function TrendingBlogs(params: any) {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.BACKEND_TOKEN}`,
+    },
+  };
+
+  try {
+    const res = await fetch(`${process.env.BACKEND}/${params}`, options);
+    const data = await res.json();
+    return { data };
+  } catch (error) {
+    console.log(error);
   }
 }

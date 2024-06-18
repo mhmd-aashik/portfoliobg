@@ -13,7 +13,7 @@ const nextConfig = {
     ],
   },
   env: {
-    NEXT_PUBLIC_API_BASE_URL: process.env.FILE, // Replace "FILE" with your actual variable name
+    NEXT_PUBLIC_API_BASE_URL: process.env.FILE,
   },
 };
 
