@@ -4,7 +4,7 @@ import BlogCards from "./BlogCards";
 import Link from "next/link";
 
 const Service = async () => {
-  const serviceData: any = await TrendingBlogs(
+  const serviceData = await TrendingBlogs(
     `blogs?pagination[limit]=8&populate=*`
   );
   const services = serviceData?.data?.data;

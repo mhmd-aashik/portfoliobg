@@ -2,7 +2,6 @@ import React from "react";
 import { TrendingBlogs } from "@/lib/backend";
 import BlogCards from "../BlogCards";
 
-export const revalidate = 0;
 
 const SingleTrendBlog = async () => {
   const result = await TrendingBlogs(`blogs?pagination[limit]=4&populate=*`);

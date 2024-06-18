@@ -5,7 +5,7 @@ import React from "react";
 
 const SingleBlog = async ({ params }: any) => {
   const results: any = await fetchBlogsById({ id: params.id });
-  const { id, attributes } = results.data.data;
+  const { attributes } = results.data.data;
 
   const { Title, Description } = attributes;
   const imageData = attributes.Image.data.attributes.formats;
@@ -25,7 +25,7 @@ const SingleBlog = async ({ params }: any) => {
           height={700}
           className="max-h-[700px] rounded-t-3xl bg-center object-cover"
         />
-        <div className=" p-6">
+        <div className="p-6">
           <h2 className="pb-8 font-medium  text-[#40E9FD] sm:text-[30px]">
             {Title}
           </h2>

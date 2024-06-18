@@ -3,48 +3,6 @@ import { TrendingBlogs } from "@/lib/backend";
 import Link from "next/link";
 import BlogCards from "./BlogCards";
 
-export const revalidate = 0;
-// const trendingBlogs = [
-//   {
-//     id: 1,
-//     title: "Flashloan Arbitrage Bot",
-//     description:
-//       "Automated bot for profitable cryptocurrency arbitrage opportunities.",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 2,
-//     title: "Sniper Bot DEX",
-//     description: "Rapid execution bot for decentralized exchange trading.",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 3,
-//     title: "Sandwich Bot",
-//     description: "Strategic trading bot exploiting order book slippage..",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 4,
-//     title: "Flashloan Arbitrage Bot",
-//     description:
-//       "Automated bot for profitable cryptocurrency arbitrage opportunities.",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 5,
-//     title: "Sniper Bot DEX",
-//     description: "Rapid execution bot for decentralized exchange trading.",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-//   {
-//     id: 6,
-//     title: "Sandwich Bot",
-//     description: "Strategic trading bot exploiting order book slippage..",
-//     img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-// ];
-
 const TrendBlog = async () => {
   const result = await TrendingBlogs(`blogs?pagination[limit]=4&populate=*`);
 
