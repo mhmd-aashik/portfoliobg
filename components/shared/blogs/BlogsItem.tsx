@@ -6,8 +6,6 @@ import Link from "next/link";
 const BlogsItem = ({ blogs }: any) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const searchData = blogs?.data?.data;
-
   const categories = [
     "All",
     "Tech",
@@ -21,13 +19,13 @@ const BlogsItem = ({ blogs }: any) => {
 
   const filteredArticles =
     selectedCategory === "All"
-      ? searchData
-      : searchData.filter(
+      ? blogs
+      : blogs.filter(
           (article: any) => article.attributes.Types === selectedCategory
         );
 
   return (
-    <div className="mx-auto max-w-7xl overflow-scroll px-5 md:px-10">
+    <div className="mx-auto max-w-7xl px-5 md:px-10">
       <div className="flex flex-wrap justify-center gap-4 space-x-4 py-4">
         {categories.map((category) => (
           <button
